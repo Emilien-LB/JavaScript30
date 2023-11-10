@@ -60,14 +60,17 @@
   </style>
 
   <script>
+    //selectionne les éléments de la div controls mais que les input.
     const inputs = document.querySelectorAll('.controls input');
-
+    // Est appelée quand la valeur de l'input change
     function handleUpdate() {
       const suffix = this.dataset.sizing || '';
       document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
     }
 
+    // écouteurs d'évènements : lorsque la valeur de l'input change
     inputs.forEach(input => input.addEventListener('change', handleUpdate))
+    // écouteurs d'évènements : lorsque la souris se déplace sur l'input
     inputs.forEach(input => input.addEventListener('mousemove', handleUpdate))
   </script>
 
